@@ -1,0 +1,13 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Page Include="C:\Users\kopis\OneDrive\Dokumente\++Master_DR\WS22_23\Projekt 1\221221_Projekt_1_Lufthansa\Assets\Elec.xaml" Link="Elec.xaml" />
+  </ItemGroup>
+
+</Project>

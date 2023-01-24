@@ -1,0 +1,6 @@
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1.csproj.AssemblyReference.cache
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\New Xaml.baml
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\MainWindow.g.cs
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\App.g.cs
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.cache
+C:\Users\kopis\source\repos\WpfApp1\WpfApp1\obj\Debug\netcoreapp3.1\WpfApp1_MarkupCompile.lref
