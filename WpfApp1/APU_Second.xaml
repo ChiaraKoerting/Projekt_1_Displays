@@ -1,0 +1,222 @@
+<Grid
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  xmlns:noesis="clr-namespace:NoesisGUIExtensions;assembly=Noesis.GUI.Extensions"
+  mc:Ignorable="d">
+  <Viewbox>
+
+    <!--Haupt Rectangle -->
+    <Canvas Width="150" Height="150">
+      <Rectangle Width="150" Height="150"
+        Fill="black" Stroke="DimGray" StrokeThickness="3" Margin="0" />
+
+      <!--Zwei kleineren Kasten -->
+      <Rectangle Canvas.Left="15" Canvas.Top="15" Width="30" Height="25" Stroke="white"
+        StrokeThickness="1" Margin="4" />
+      
+      <TextBlock Text="APU     GEN" Canvas.Left="25" Canvas.Top="20" TextAlignment="Center" FontSize="4"
+        Foreground="green" />
+     
+      
+      <TextBlock Text="{Binding APUPercentageValue}" Canvas.Left="23" Canvas.Top="27" TextAlignment="Center" FontSize="3"
+      Foreground="{Binding APUValuesColor}"/>
+      
+      <TextBlock Text="{Binding ApuValueInVolt}" Canvas.Left="23" Canvas.Top="32" TextAlignment="Center"
+        FontSize="3" Foreground="{Binding APUValuesColor}" />
+          
+      <TextBlock Text="{Binding APUValueInHz}" Canvas.Left="23" Canvas.Top="37" TextAlignment="Center" FontSize="3"
+      Foreground="{Binding APUValuesColor}"/>
+      
+      
+      <TextBlock Canvas.Left="35" Canvas.Top="26" TextAlignment="Center" FontSize="4" Foreground="green">
+        <Span>%</Span>
+        <LineBreak />
+        <Span>Volt</Span>
+        <LineBreak />
+        <Span>Hz</Span>
+      </TextBlock>
+
+      
+  <!--Line First -->
+      <Line.Stroke>
+      </Line.Stroke>
+      <Line
+        X1="10" Y1="50"
+        X2="140" Y2="50"
+        Stroke="white"
+        StrokeThickness="1" />
+     
+      <Rectangle Canvas.Left="139" Canvas.Top="50" VerticalAlignment="Stretch" Fill="white" Width="1" Height="10" />
+      <Rectangle Canvas.Left="10" Canvas.Top="50" VerticalAlignment="Stretch" Fill="white" Width="1" Height="10" />
+     
+      <Rectangle Canvas.Left="100" Canvas.Top="20" Width="25" Height="16" Stroke="white"
+        StrokeThickness="1" Margin="4" />
+        <Ellipse
+                 Width="11"
+                 Height="11"
+                 Stroke="green"
+                 StrokeThickness="0.6"
+                 Canvas.Left="110.5"
+                 Canvas.Top="9" />
+      
+      <!--Line from Circle First -->
+      <Rectangle Canvas.Left="116" Canvas.Top="9" Height="15" Width="0.6"
+        Fill="green" StrokeThickness="0.6"></Rectangle>
+      
+      <TextBlock Canvas.Left="115" Canvas.Top="27" TextAlignment="Center" FontSize="4"
+        Foreground="green">
+        <Span>BLEED</Span>
+        <LineBreak />
+        <Span>PSI</Span>
+      </TextBlock>
+
+      <TextBlock Text="{Binding BleedPSIValue}" Canvas.Left="107" Canvas.Top="32.5" TextAlignment="Center" FontSize="4" 
+                 Foreground="{Binding PSIColor}"/>
+
+      <TextBlock Text="{Binding D_Name}" Canvas.Left="76" Canvas.Top="12" Width="20"
+        Height="5" FontSize="5" Foreground="green" />
+
+      <TextBlock Text="{Binding D_Sec_Name}" Canvas.Left="75" Canvas.Top="20" Width="15" Height="5" FontSize="5"
+        Foreground="green" />
+
+
+      <!-- 1 -->
+       <Path Stroke="white" Canvas.Left="20" Canvas.Top="60">
+              <Path.Data>
+          <PathGeometry>
+            <PathGeometry.Figures>
+              <PathFigureCollection>
+                <PathFigure StartPoint="0, 25">
+                  <PathFigure.Segments>
+                    <PathSegmentCollection>
+                      <ArcSegment Size="15, 15"
+                        IsLargeArc="True"
+                        SweepDirection="Clockwise"
+                        Point="25, 0" />
+                    </PathSegmentCollection>
+                  </PathFigure.Segments>
+                </PathFigure>
+              </PathFigureCollection>
+            </PathGeometry.Figures>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+           
+      <Border Canvas.Left="32" Canvas.Top="70" Width="1" CornerRadius="0 0 120 120" Background="green" 
+            Height="15" Margin="0 0 0 140" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="{Binding FirstArrowPosition}"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="#FFB9B9B9" ShadowDepth="0"/>
+            </Border.Effect>
+        </Border>
+
+      <TextBlock Canvas.Left="47" Canvas.Top="65" FontSize="4" Foreground="green">
+        <Span>N</Span>
+        <LineBreak />
+        <Span>%</Span>
+      </TextBlock>
+      
+      <TextBlock Canvas.Left="40" Canvas.Top="62" FontSize="3"
+        Text="10" Foreground="white" />
+      
+      <TextBlock Canvas.Left="22" Canvas.Top="78" FontSize="3"
+        Text="0" Foreground="white" />
+      
+
+      <TextBlock Text="{Binding FirstArrowValue}" Canvas.Left="47" Canvas.Top="80" FontSize="6"
+        Foreground="{Binding ArrowValueColor}" />
+        
+      <TextBlock Text="{Binding SetTextFlapOPEN}" Canvas.Left="87" Canvas.Top="80" FontSize="9"
+        Foreground="green" />
+ 
+      <!--2 -->
+      <Path Stroke="white" Canvas.Left="20" Canvas.Top="95">
+        <Path.Data>
+          <PathGeometry>
+            <PathGeometry.Figures>
+              <PathFigureCollection>
+                <PathFigure StartPoint="0, 25">
+                  <PathFigure.Segments>
+                    <PathSegmentCollection>
+                      <ArcSegment Size="15, 15"
+                        IsLargeArc="True"
+                        SweepDirection="Clockwise"
+                        Point="25, 0" />
+                    </PathSegmentCollection>
+                  </PathFigure.Segments>
+                </PathFigure>
+              </PathFigureCollection>
+            </PathGeometry.Figures>
+          </PathGeometry>
+        </Path.Data>
+      </Path>
+      
+      <Border Canvas.Left="32" Canvas.Top="106" Width="1" CornerRadius="0 0 120 120" Background="green" 
+      Height="15" Margin="0 0 0 140" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+      <Border.RenderTransform>
+          <TransformGroup>
+              <ScaleTransform/>
+              <SkewTransform/>
+              
+              <RotateTransform Angle="{Binding SecondArrowPosition}"/>
+              <TranslateTransform/>
+          </TransformGroup>
+      </Border.RenderTransform>
+      <Border.Effect>
+          <DropShadowEffect BlurRadius="30" Color="#FF00FFFF" ShadowDepth="0"/>
+      </Border.Effect>
+  </Border>
+
+
+      <TextBlock Canvas.Left="47" Canvas.Top="95" FontSize="4" Foreground="green">
+        <Span>EGT</Span>
+        <LineBreak />
+        <Span>°C</Span>
+      </TextBlock>
+      <TextBlock Canvas.Left="47" Canvas.Top="113" FontSize="6"
+        Text="{Binding SecondArrowValue}" Foreground="{Binding ArrowValueColor}" />
+      
+      <TextBlock Canvas.Left="23" Canvas.Top="115" FontSize="3"
+        Text="3" Foreground="white" />
+      
+      <TextBlock Canvas.Left="24" Canvas.Top="97" FontSize="3"
+        Text="7" Foreground="white" />
+      
+      <TextBlock Canvas.Left="39" Canvas.Top="96" FontSize="3"
+        Text="10" Foreground="white" />
+      
+        <!--Line -->
+      <Line.Stroke>
+      </Line.Stroke>
+      <Line
+      X1="5" Y1="125"
+      X2="145" Y2="125"
+      Stroke="White"
+      StrokeThickness="1" />
+
+
+      <TextBlock Canvas.Left="20" Canvas.Top="130" FontSize="4" Foreground="green">
+        <Span>EGT +12 °C</Span>
+        <LineBreak />
+        <Span>SAT +12 °C</Span>
+      </TextBlock>
+      <TextBlock Text="{Binding CurrentTime}" Canvas.Left="55" Canvas.Top="130" FontSize="4" Foreground="#FF95D4FF"/>
+      <TextBlock Canvas.Left="110" Canvas.Top="130" FontSize="4" Foreground="green">
+        <Span>GW 59700 KG</Span>
+      </TextBlock>
+      <Rectangle Canvas.Left="50" Canvas.Top="125" VerticalAlignment="Stretch" Fill="white" Width="1" Height="22" />
+      <Rectangle Canvas.Left="100" Canvas.Top="125" VerticalAlignment="Stretch" Fill="white" Width="1" Height="22" />
+
+
+    </Canvas>
+  </Viewbox>
+</Grid>
